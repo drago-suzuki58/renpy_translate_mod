@@ -26,12 +26,12 @@ def encode_matches(pattern, text):
     matches = re.findall(pattern, text)
     for match in matches:
         encoded_match = base16_encode(match) # 括弧ごとエンコードする
-        text = text.replace(match, f'"[{encoded_match}]"') # エンコードしたものを括弧で囲む
+        text = text.replace(match, f'|{encoded_match}|') # エンコードしたものを、使われない||で囲む
     return text
 
 def decode_matches(text):
-    matches = re.findall(r"\[.*?\]", text) # 後でこれごと置換するので[]ごと取得
+    matches = re.findall(r"\|.*?\|", text) # 後でこれごと置換するので||ごと取得
     for match in matches:
-        decoded_match = base16_decode(match[1:-1]) # []を取り除く
+        decoded_match = base16_decode(match[1:-1]) # ||を取り除く
         text = text.replace(match, decoded_match)
     return text
