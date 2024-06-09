@@ -60,9 +60,6 @@ def handle_command(args):
     logs.logs("DEBUG", "Logs", f"{settings.LOG_ENABLED}")
     logs.logs("DEBUG", "Logs", f"Current log level '{settings.LOG_LEVEL}'")
 
-    if settings.LOG_ENABLED:
-        logs.initialize_logfile() # ログファイルの初期化
-
     logs.logs("DEBUG", "Mode", f"{args.mode}")
     # モードによって対応するモジュールを呼び出す
     if args.mode == 'tsv_translate':
