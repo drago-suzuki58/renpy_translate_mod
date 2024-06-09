@@ -62,18 +62,18 @@ def handle_command(args):
     # モードによって対応するモジュールを呼び出す
     if args.mode == 'tsv_translate':
         import modules.dialogue.tsv_translate
-        modules.dialogue.tsv_translate.main()
+        modules.dialogue.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target)
     elif args.mode == 'tsv2rpy':
         import modules.dialogue.tsv2rpy
-        modules.dialogue.tsv2rpy.main()
+        modules.dialogue.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)
     elif args.mode == 'extract_menu':
         import modules.menu.extract
-        modules.menu.extract.main()
+        modules.menu.extract.main(args.input, args.output)
     elif args.mode == 'tsv_translate_menu':
         import modules.menu.tsv_translate
-        modules.menu.tsv_translate.main()
+        modules.menu.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target)
     elif args.mode == 'tsv2rpy_menu':
         import modules.menu.tsv2rpy
-        modules.menu.tsv2rpy.main()
+        modules.menu.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)
     else:
         print('Invalid mode. Exiting...')
