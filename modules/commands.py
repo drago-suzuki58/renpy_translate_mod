@@ -59,15 +59,21 @@ def handle_command(args):
         logs.initialize_logfile() # ログファイルの初期化
 
     logs.logs("DEBUG", "Mode", f"{args.mode}")
+    # モードによって対応するモジュールを呼び出す
     if args.mode == 'tsv_translate':
-        pass
+        import modules.dialogue.tsv_translate
+        modules.dialogue.tsv_translate.main()
     elif args.mode == 'tsv2rpy':
-        pass
+        import modules.dialogue.tsv2rpy
+        modules.dialogue.tsv2rpy.main()
     elif args.mode == 'extract_menu':
-        pass
+        import modules.menu.extract
+        modules.menu.extract.main()
     elif args.mode == 'tsv_translate_menu':
-        pass
+        import modules.menu.tsv_translate
+        modules.menu.tsv_translate.main()
     elif args.mode == 'tsv2rpy_menu':
-        pass
+        import modules.menu.tsv2rpy
+        modules.menu.tsv2rpy.main()
     else:
         print('Invalid mode. Exiting...')
