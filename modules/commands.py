@@ -4,9 +4,12 @@ import modules.settings as settings
 import modules.run_logs as logs
 
 def commands():
+    logs.logs("INFO", "Start", "")
+
     parser = argparse.ArgumentParser(description='WIP')
-    parser.add_argument('--log', '-l', default=False, action='store_true', help='Print log to console and log file')
-    parser.add_argument('--log_file', '-lf', default='log.txt', help='The log file to write to')
+    parser.add_argument('--log', '-l', default=settings.LOG_ENABLED, action='store_true', help='Print log to console and log file')
+    parser.add_argument('--log_file', '-lf', default=settings.LOG_FILE, help='The log file to write to')
+    parser.add_argument('--log_level', '-lv', default=settings.LOG_LEVEL, help='Print debug information')
 
     subparsers = parser.add_subparsers(dest='mode', help='Mode to run the program in')
 
@@ -48,11 +51,14 @@ def handle_command(args):
     # ログ設定をグローバルに
     settings.LOG_ENABLED = args.log
     settings.LOG_FILE = args.log_file
+    settings.LOG_LEVEL = args.log_level
+    logs.logs("DEBUG", "Logs", f"{settings.LOG_ENABLED}")
+    logs.logs("DEBUG", "Logs", f"Current log level '{settings.LOG_LEVEL}'")
 
     if settings.LOG_ENABLED:
         logs.initialize_logfile() # ログファイルの初期化
-        logs.logs('INFO', f'Logging enabled. Log file:{settings.LOG_FILE}')
 
+    logs.logs("DEBUG", "Mode", f"{args.mode}")
     if args.mode == 'tsv_translate':
         pass
     elif args.mode == 'tsv2rpy':
