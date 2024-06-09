@@ -1,11 +1,18 @@
 from typing import List
 import re
+import os
 
 import modules.run_logs as logs
 
 def main(input: List[str], output: str):
     logs.logs("DEBUG", "Extract_menu", f"{input}, {output}")
     choices = []
+
+    if not input:
+        for root, dirs, files in os.walk('.'):
+            for file in files:
+                if file.endswith('.rpy'):
+                    input.append(os.path.join(root, file))
     for input_file in input:
         if input_file.endswith('.rpy'):
             with open(input_file, 'r', encoding='utf-8') as file:
