@@ -9,7 +9,7 @@ def main(input: str, output: str, tl_lang: str, comment: bool):
     with open(input, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         for line in lines:
-            if line == u"filename\tlinenumber\tidentifier\tcontents\n":
+            if line == u"filename\tlinenumber\tidentifier\tcontents\n": # ヘッダー行をスキップ
                 continue
             filename, linenumber, identifier, contents = line.strip().split('\t')
 

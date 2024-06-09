@@ -9,7 +9,7 @@ def main(input: str, output: str, tl_lang: str, comment: bool):
     with open(input, 'r', encoding='utf-8') as file:
         lines = file.readlines()
         for line in lines:
-            if line == "filename\tlinenumber\tchoice\ttranslated\n":
+            if line == "filename\tlinenumber\tchoice\ttranslated\n": # ヘッダー行をスキップ
                 continue
             filename, linenumber, choice, translated = line.strip().split('\t')
 
@@ -23,6 +23,6 @@ def main(input: str, output: str, tl_lang: str, comment: bool):
             ourput_lines += f"    old \"{choice}\"\n    new \"{translated}\"\n\n"
 
     with open(output, 'w', encoding='utf-8') as f:
-        f.write(f"translate {tl_lang} strings:\n\n")
+        f.write(f"translate {tl_lang} strings:\n\n") # 一番最初の行のみ追加
         f.write(ourput_lines)
         logs.logs("INFO", "TSV2RPY_menu", f"Write {len(ourput_lines)} chars to {output}")

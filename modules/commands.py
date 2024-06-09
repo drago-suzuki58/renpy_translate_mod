@@ -13,6 +13,7 @@ def commands():
 
     subparsers = parser.add_subparsers(dest='mode', help='Mode to run the program in')
 
+    # modules.dialogue.tsv_translate
     tsv_translate_parser = subparsers.add_parser('tsv_translate', help='Translate a TSV file to a different language')
     tsv_translate_parser.add_argument('--input', '-i', default=settings.TSV_TRANSLATE_INPUT, help='The TSV file to translate')
     tsv_translate_parser.add_argument('--output', '-o', default=settings.TSV_TRANSLATE_OUTPUT, help='The output TSV file')
@@ -20,16 +21,19 @@ def commands():
     tsv_translate_parser.add_argument('--tolang', '-to', default=settings.TO_LANG, help='The language to translate to')
     tsv_translate_parser.add_argument('--target', '-t', nargs='+', default=settings.TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
 
+    # modules.dialogue.tsv2rpy
     tsv2rpy_parser = subparsers.add_parser('tsv2rpy', help='Convert a TSV file to RenPy script')
     tsv2rpy_parser.add_argument('--input', '-i', default=settings.TSV2RPY_INPUT, help='The TSV file to convert')
     tsv2rpy_parser.add_argument('--output', '-o', default=settings.TSV2RPY_OUTPUT, help='The output RenPy script')
     tsv2rpy_parser.add_argument('--tl_lang', '-tl', default=settings.TL_LANG, help='The target language to translate to')
     tsv2rpy_parser.add_argument('--comment', '-c', default=settings.COMMENT, action='store_true', help='Add comments to the RenPy script')
 
+    # modules.menu.extract
     extract_menu_parser = subparsers.add_parser('extract_menu', help='Extract menu options from a RenPy script')
     extract_menu_parser.add_argument('--input', '-i', nargs='+', default=settings.EXTRACT_MENU_INPUT, help='The RenPy script to extract menu options from')
     extract_menu_parser.add_argument('--output', '-o', default=settings.EXTRACT_MENU_OUTPUT, help='The output TSV file')
 
+    # modules.menu.tsv_translate
     tsv_translate_menu_parser = subparsers.add_parser('tsv_translate_menu', help='Translate menu options in a RenPy script')
     tsv_translate_menu_parser.add_argument('--input', '-i', default=settings.MENU_TSV_TRANSLATE_INPUT, help='The TSV file to translate')
     tsv_translate_menu_parser.add_argument('--output', '-o', default=settings.MENU_TSV_TRANSLATE_OUTPUT, help='The output TSV file')
@@ -37,6 +41,7 @@ def commands():
     tsv_translate_menu_parser.add_argument('--tolang', '-to', default=settings.TO_LANG, help='The language to translate to')
     tsv_translate_menu_parser.add_argument('--target', '-t', nargs='+', default=settings.TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
 
+    # modules.menu.tsv2rpy
     tsv2rpy_menu_parser = subparsers.add_parser('tsv2rpy_menu', help='Convert menu options in a RenPy script to RenPy script')
     tsv2rpy_menu_parser.add_argument('--input', '-i', default=settings.MENU_TSV2RPY_INPUT, help='The TSV file to convert')
     tsv2rpy_menu_parser.add_argument('--output', '-o', default=settings.MENU_TSV2RPY_OUTPUT, help='The output RenPy script')
@@ -76,4 +81,4 @@ def handle_command(args):
         import modules.menu.tsv2rpy
         modules.menu.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)
     else:
-        print('Invalid mode. Exiting...')
+        logs.logs("ERROR", "Mode", "Invalid mode")

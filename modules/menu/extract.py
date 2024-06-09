@@ -16,6 +16,7 @@ def main(input: List[str], output: str):
 
 
 def extract_menu_choices(text, filename):
+    # menuラベルを見つけて、その中のインデントされた選択肢を抽出する
     def extract_choices(lines, indent, start_line):
         choices = []
         while lines:
@@ -40,7 +41,7 @@ def extract_menu_choices(text, filename):
 
 def write_choices_to_file(choices, output):
     with open(output, 'w', encoding='utf-8') as file:
-        file.write('filename\tlinenumber\tchoice\ttranslated\n')
+        file.write('filename\tlinenumber\tchoice\ttranslated\n') # ヘッダー行を追加
         for choice in choices:
-            file.write('\t'.join(map(str, choice)) + '\n')
+            file.write('\t'.join(map(str, choice)) + '\n') # タブ区切りで書き込み
         logs.logs("INFO", "Extract_menu", f"Write {len(choices)} choices to {output}")

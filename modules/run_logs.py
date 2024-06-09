@@ -8,6 +8,7 @@ def initialize_logfile():
         logs("INFO", "Log", f"Log file initialized: {settings.LOG_FILE}")
 
 def logs(level, description, text=""):
+    # ログレベルの設定(追加も可能)
     level_mapping = {"DEBUG": 10, "INFO": 20, "WARNING": 30, "ERROR": 40, "CRITICAL": 50}
     valid_levels = level_mapping.keys()
     if settings.LOG_ENABLED:
