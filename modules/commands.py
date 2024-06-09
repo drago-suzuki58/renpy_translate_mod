@@ -27,7 +27,7 @@ def commands():
     tsv2rpy_parser.add_argument('--comment', '-c', default=settings.COMMENT, action='store_true', help='Add comments to the RenPy script')
 
     extract_menu_parser = subparsers.add_parser('extract_menu', help='Extract menu options from a RenPy script')
-    extract_menu_parser.add_argument('--input', '-i', default=settings.EXTRACT_MENU_INPUT, help='The RenPy script to extract menu options from')
+    extract_menu_parser.add_argument('--input', '-i', nargs='+', default=settings.EXTRACT_MENU_INPUT, help='The RenPy script to extract menu options from')
     extract_menu_parser.add_argument('--output', '-o', default=settings.EXTRACT_MENU_OUTPUT, help='The output TSV file')
 
     tsv_translate_menu_parser = subparsers.add_parser('tsv_translate_menu', help='Translate menu options in a RenPy script')

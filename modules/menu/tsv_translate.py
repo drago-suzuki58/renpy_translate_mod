@@ -25,10 +25,10 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
         logs.logs("INFO", "Translate_dialogue", f"Read {len(lines)} lines from {input}")
 
         for line in lines:
-            if line == "filename\tlinenumber\tchoice\n":
+            if line == "filename\tlinenumber\tchoice\ttranslated\n":
                 continue # ヘッダー行をスキップ
 
-            filename, linenumber, choice = line.strip().split('\t')
+            filename, linenumber, choice , translated_text= line.strip().split('\t')
 
             if target and filename not in target:
                 continue
