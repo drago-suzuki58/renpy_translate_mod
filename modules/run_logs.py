@@ -1,12 +1,14 @@
 import datetime
 
-def initialaise_logfile(log_file):
-    with open(log_file, 'w', encoding='utf-8') as f:
+import modules.settings as settings
+
+def initialize_logfile():
+    with open(settings.LOG_FILE, 'w', encoding='utf-8') as f:
         f.write("")
 
-def logs(log, log_file, description, text=""):
-    if log:
+def logs(description, text=""):
+    if settings.LOG_ENABLED:
         print(description, ":\t", text)
-        with open(log_file, 'a', encoding='utf-8') as f:
+        with open(settings.LOG_FILE, 'a', encoding='utf-8') as f:
             current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
             f.write(f"{current_time}:\t{description}:\t{text}\n")
