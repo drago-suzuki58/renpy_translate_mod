@@ -6,7 +6,7 @@ import modules.run_logs as logs
 def commands():
     logs.logs("INFO", "Start", "")
 
-    parser = argparse.ArgumentParser(description='WIP')
+    parser = argparse.ArgumentParser(description='This script allows for the handling of RenPy dialogues and choices as TSV data, enabling automatic translation and the ability to play the game in a different language.')
     parser.add_argument('--log', '-l', default=settings.LOG_ENABLED, action='store_true', help='Print log to console and log file')
     parser.add_argument('--log_file', '-lf', default=settings.LOG_FILE, help='The log file to write to')
     parser.add_argument('--log_level', '-lv', default=settings.LOG_LEVEL, help='Print debug information')
