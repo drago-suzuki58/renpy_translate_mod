@@ -20,7 +20,7 @@ def main(input: str, output: str, tl_lang: str, comment: bool):
                 ourput_lines += f"# line:{linenumber}\n"
                 previous_filename = filename
 
-                ourput_lines += f"translate {tl_lang} {identifier}:\n\n    {contents}\n\n"
+            ourput_lines += f"translate {tl_lang} {identifier}:\n\n    {contents}\n\n"
 
 
     with open(output, 'w', encoding='utf-8') as f:
