@@ -8,7 +8,7 @@ Pythonをインストールし、```pip install -r requirements.txt```とコマ�
 
 動作確認済のPythonバージョンは3.10です。Python2では動きません。
 
-また、セリフの抽出はこれ一つでは今のところはできません。後々追加する可能性もあります。
+RenPyのバージョンによってはPython2でしか動作しないものもあるので、ゲームからのセリフ抽出のみPython2でも対応していますが動作の保証はできません。
 
 ## コマンド説明
 
@@ -431,6 +431,55 @@ translate japanese strings:
 python main.py tsv2rpy -o example.rpy -tl japanesetl -c
 python main.py tsv2rpy -i edited.tsv
 ```
+
+## ゲーム内からのセリフ抽出
+
+このModでは、オプションを正しく変更することにより、未翻訳のセリフのみを抽出したり多くのことができます。
+
+ルートディレクトリの```__init__.py```でオプションを操作することができるので、次のオプションの項目を読んで設定してください。  
+前の項目のコマンドの設定とは異なり、```modules/settings.py```では設定することができません。
+
+### 使用方法
+
+この```renpy_translate_mod```リポジトリをダウンロードして、該当ゲームのgameディレクトリの中にそのまま入れてください。
+
+ディレクトリ図の例
+
+``` dir
+├ game/
+│    ├ cache/
+│    ├ renpy_translate_mod/  ←このフォルダをここでダウンロードして追加
+│    │        ├ modules/
+│    │        ├ __init__.py
+│    │        └ bootstrap.rpy
+│    │
+│    └ saves/
+│
+├ lib/
+├ renpy/
+├ game.exe
+└ log.txt
+```
+
+### オプション
+
+動作設定```WORK```
+
+この設定をTrueにすれば、ゲームの起動時にセリフが抽出されます。  
+ファイルを上書きされたくない場合などはFalseにしておくと誤爆を防げます。  
+デフォルト値：```True```
+
+出力ファイル設定```EXTRACT_DIALOGUE_OUTPUT```
+
+この設定では、出力ファイルの名前を変更できます。  
+セリフを小分けにして保存などする等の用途で使用できます。
+デフォルト値：```'untranslated.tsv'```
+
+言語設定```EXTRACT_DIALOGUE_TO_LANG```
+
+この設定では```tsv2rpy```や```tsv2rpy_menu```モードの```--tl_lang```と同じRenPyが言語を認識するときの識別子を使用して、翻訳されていないセリフのみを抜き出します。  
+この設定がうまく行かないと全て抽出されてしまいます。
+デフォルト値：```'japanese'```
 
 ## 疑問点について
 
