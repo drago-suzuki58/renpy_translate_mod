@@ -34,7 +34,16 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
                 continue
 
             match_str = re.match(r'^([^"]*)"((?:[^"\\]|\\.)*)"', contents) # エスケープされていないダブルクォーテーションのみを対象にする(つまりセリフと人物を分ける)
-            if match_str:
+
+            if match_str == None:
+                lines_to_write.append(f"{filename}\t{linenumber}\t{identifier}\t{contents}\n")
+
+                logs.logs("DEBUG", "Translate_dialogue", f"Append:\t{filename}, {linenumber}, {identifier}, {contents}")
+                logs.logs("INFO", "Translate_dialogue", f"Line {progress}/{total_lines}:\t{contents}")
+
+                progress += 1
+
+            else:
                 person = match_str.group(1)
                 dialogue = match_str.group(2)
                 original_dialogue = dialogue
