@@ -10,7 +10,7 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
     logs.logs("DEBUG", "Translate_dialogue", f"{input}, {output}, {fromlang}, {tolang}, {target}")
 
     lines_to_write = []
-    progress = 2
+    progress = 1
 
     if fromlang == tolang:
         logs.logs("ERROR", "Translate_dialogue", "The source and target languages are the same.")
@@ -21,7 +21,7 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
 
     with open(input, "r", encoding="utf-8") as f:
         lines = f.readlines()
-        total_lines = len(lines)
+        total_lines = len(lines) - 1
         logs.logs("INFO", "Translate_dialogue", f"Read {len(lines)} lines from {input}")
 
         for line in lines:
