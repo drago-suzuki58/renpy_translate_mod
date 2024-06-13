@@ -10,6 +10,7 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
     logs.logs("DEBUG", "Translate_dialogue", f"{input}, {output}, {fromlang}, {tolang}, {target}")
 
     progress = 1
+    total_chars = 0
 
     if fromlang == tolang:
         logs.logs("ERROR", "Translate_dialogue", "The source and target languages are the same.")
@@ -61,6 +62,7 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
 
                     for _ in range(5): # 翻訳のタイムアウト時に最大5回再試行
                         try:
+                            total_chars += len(dialogue)
                             translated_text = g_translator.translate(dialogue, src=fromlang, dest=tolang).text
                             logs.logs("INFO", "Translate_dialogue", f"Translated:\t{original_dialogue} -> {translated_text}")
                             break
@@ -79,3 +81,5 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
 
                     logs.logs("INFO", "Translate_dialogue", f"Line {progress}/{total_lines}:\t{contents}")
                     progress += 1
+
+    logs.logs("INFO", "Translate_dialogue", f"Total characters: {total_chars}")
