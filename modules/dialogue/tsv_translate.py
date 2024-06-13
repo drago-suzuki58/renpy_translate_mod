@@ -60,6 +60,7 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
                             logs.logs("INFO", "Translate_dialogue", f"Translated:\t{original_dialogue} -> {translated_text}")
                             break
                         except requests.exceptions.Timeout:
+                            logs.logs("WARNING", "Translate_dialogue", f"Google Translate API timed out. Retrying...:\t{_}/5 time:\tLine: {progress}")
                             continue
                     else:
                         logs.logs("ERROR", "Translate_dialogue", f"Google Translate API timed out 5 times. Skipping this line.\nLine: {progress}")
