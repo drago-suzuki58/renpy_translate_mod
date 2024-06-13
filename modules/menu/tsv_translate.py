@@ -22,21 +22,21 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
         with open(output, "w", encoding="utf-8") as output_f:
             lines = f.readlines()
             total_lines = len(lines) - 1
-            f.write("filename\tlinenumber\tchoice\ttranslated\n") # ヘッダー行を追加
+            output_f.write("filename\tlinenumber\tchoice\ttranslated\n") # ヘッダー行を追加
             logs.logs("INFO", "Translate_dialogue", f"Read {len(lines)} lines from {input}")
 
             for line in lines:
                 if line == "filename\tlinenumber\tchoice\ttranslated\n":
                     continue # ヘッダー行をスキップ
 
-                if progress < start_line:
-                    logs.logs("DEBUG", "Translate_dialogue", f"Skip:\t{filename}, {linenumber}, {original_choice}, {translated_text}")
-                    progress += 1
-                    continue
-
                 filename, linenumber, choice , translated_text= line.strip().split('\t')
 
                 if target and filename not in target:
+                    continue
+
+                if progress < start_line:
+                    logs.logs("DEBUG", "Translate_dialogue", f"Skip:\t{filename}, {linenumber}, {choice}, {translated_text}")
+                    progress += 1
                     continue
 
                 if choice:
