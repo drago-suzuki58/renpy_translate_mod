@@ -140,7 +140,7 @@ game/scene2.rpy    20    scene1_sample5    b "sample5"
 ```--start_line```(```-sl```)
 
 翻訳を開始する行数を指定することができます。  
-ヘッダー行は含まず、データの中身の行数だけで認識するので気をつけてください。  
+ヘッダー行は含まず、データの中身の行数だけで認識するので気をつけてください。
 
 例：```python main.py tsv_translate -sl 3```
 
@@ -163,6 +163,9 @@ game/scene1.rpy    18    scene1_sample3    b "サンプル3"
 game/scene2.rpy    19    scene1_sample4    c "サンプル4"
 game/scene2.rpy    20    scene1_sample5    b "サンプル5"
 ```
+
+デフォルト値：```0```  
+設定：```START_LINE```
 
 ##### 使用例
 
@@ -256,15 +259,13 @@ translate japanese scene1_sample3:
 
 ```--split_file```(```-sf```)
 
-TSV一番左の```filename```に応じて、出力するファイルを変更することができるようになり、分割したファイルの生成ができるようになります。
-
+TSV一番左の```filename```に応じて、出力するファイルを変更することができるようになり、分割したファイルの生成ができるようになります。  
 デフォルト値：```False```  
 設定：```SPLIT_FILE```
 
 ```--split_prefix```(```-sp```)
 
-分割するファイルにつける接頭詞を変更できます。
-
+分割するファイルにつける接頭詞を変更できます。  
 デフォルト値：```'convert_'```  
 設定：```SPLIT_PREFIX```
 
@@ -374,7 +375,7 @@ scene2.rpy    55    "sample5"    Untranslated
 ```--start_line```(```-sl```)
 
 翻訳を開始する行数を指定することができます。  
-ヘッダー行は含まず、データの中身の行数だけで認識するので気をつけてください。  
+ヘッダー行は含まず、データの中身の行数だけで認識するので気をつけてください。
 
 例：```python main.py tsv_translate_menu -sl 3```
 
@@ -397,6 +398,9 @@ scene1.rpy    26    "sample3"    サンプル3
 scene2.rpy    30    "sample4"    サンプル4
 scene2.rpy    55    "sample5"    サンプル5
 ```
+
+デフォルト値：```0```  
+設定：```START_LINE```
 
 ##### 使用例
 
@@ -495,15 +499,13 @@ translate japanese strings:
 
 ```--split_file```(```-sf```)
 
-TSV一番左の```filename```に応じて、出力するファイルを変更することができるようになり、分割したファイルの生成ができるようになります。
-
+TSV一番左の```filename```に応じて、出力するファイルを変更することができるようになり、分割したファイルの生成ができるようになります。  
 デフォルト値：```False```  
 設定：```SPLIT_FILE```
 
 ```--split_prefix```(```-sp```)
 
-分割するファイルにつける接頭詞を変更できます。
-
+分割するファイルにつける接頭詞を変更できます。  
 デフォルト値：```'menu_convert_'```  
 設定：```MENU_SPLIT_PREFIX```
 
