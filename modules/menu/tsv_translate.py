@@ -6,7 +6,7 @@ import requests
 import modules.run_logs as logs
 import modules.base16 as base16
 
-def main(input: str, output: str, fromlang: str, tolang: str, target: List[str]):
+def main(input: str, output: str, fromlang: str, tolang: str, target: List[str], start_line: int):
     logs.logs("DEBUG", "Translate_menu", f"{input}, {output}, {fromlang}, {tolang}, {target}")
 
     progress = 1
@@ -28,6 +28,11 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
             for line in lines:
                 if line == "filename\tlinenumber\tchoice\ttranslated\n":
                     continue # ヘッダー行をスキップ
+
+                if progress < start_line:
+                    logs.logs("DEBUG", "Translate_dialogue", f"Skip:\t{filename}, {linenumber}, {original_choice}, {translated_text}")
+                    progress += 1
+                    continue
 
                 filename, linenumber, choice , translated_text= line.strip().split('\t')
 

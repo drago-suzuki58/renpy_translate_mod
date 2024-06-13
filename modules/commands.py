@@ -20,6 +20,7 @@ def commands():
     tsv_translate_parser.add_argument('--fromlang', '-fr', default=settings.FROM_LANG, help='The language to translate from')
     tsv_translate_parser.add_argument('--tolang', '-to', default=settings.TO_LANG, help='The language to translate to')
     tsv_translate_parser.add_argument('--target', '-t', nargs='+', default=settings.TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
+    tsv_translate_parser.add_argument('--start_line', '-sl', type=int, default=settings.START_LINE, help='The line to start translating from')
 
     # modules.dialogue.tsv2rpy
     tsv2rpy_parser = subparsers.add_parser('tsv2rpy', help='Convert a TSV file to RenPy script')
@@ -40,6 +41,7 @@ def commands():
     tsv_translate_menu_parser.add_argument('--fromlang', '-fr', default=settings.FROM_LANG, help='The language to translate from')
     tsv_translate_menu_parser.add_argument('--tolang', '-to', default=settings.TO_LANG, help='The language to translate to')
     tsv_translate_menu_parser.add_argument('--target', '-t', nargs='+', default=settings.TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
+    tsv_translate_menu_parser.add_argument('--start_line', '-sl', type=int, default=settings.START_LINE, help='The line to start translating from')
 
     # modules.menu.tsv2rpy
     tsv2rpy_menu_parser = subparsers.add_parser('tsv2rpy_menu', help='Convert menu options in a RenPy script to RenPy script')
@@ -64,7 +66,7 @@ def handle_command(args):
     # モードによって対応するモジュールを呼び出す
     if args.mode == 'tsv_translate':
         import modules.dialogue.tsv_translate
-        modules.dialogue.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target)
+        modules.dialogue.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target, args.start_line)
     elif args.mode == 'tsv2rpy':
         import modules.dialogue.tsv2rpy
         modules.dialogue.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)
@@ -73,7 +75,7 @@ def handle_command(args):
         modules.menu.extract.main(args.input, args.output)
     elif args.mode == 'tsv_translate_menu':
         import modules.menu.tsv_translate
-        modules.menu.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target)
+        modules.menu.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target, args.start_line)
     elif args.mode == 'tsv2rpy_menu':
         import modules.menu.tsv2rpy
         modules.menu.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)

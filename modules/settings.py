@@ -26,6 +26,7 @@ MENU_TSV2RPY_OUTPUT = 'menu_converted.rpy'
 # Translation common settings
 FROM_LANG = 'en'
 TO_LANG = 'ja'
+START_LINE = 0
 
 # TSV2RPY common settings
 TARGET = []

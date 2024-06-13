@@ -137,6 +137,33 @@ game/scene2.rpy    20    scene1_sample5    b "sample5"
 デフォルト値：```[]```  
 設定：```TARGET```
 
+```--start_line```(```-sl```)
+
+翻訳を開始する行数を指定することができます。  
+ヘッダー行は含まず、データの中身の行数だけで認識するので気をつけてください。  
+
+例：```python main.py tsv_translate -sl 3```
+
+翻訳前ファイル(タブはスペース4つで表記)
+
+``` tsv
+filename    linenumber    identifier    contents
+game/scene1.rpy    15    scene1_sample1    a "sample1"
+game/scene1.rpy    16    scene1_sample2    a "sample2"
+game/scene1.rpy    18    scene1_sample3    b "sample3"
+game/scene2.rpy    19    scene1_sample4    c "sample4"
+game/scene2.rpy    20    scene1_sample5    b "sample5"
+```
+
+翻訳後ファイル
+
+``` tsv
+filename    linenumber    identifier    contents
+game/scene1.rpy    18    scene1_sample3    b "サンプル3"
+game/scene2.rpy    19    scene1_sample4    c "サンプル4"
+game/scene2.rpy    20    scene1_sample5    b "サンプル5"
+```
+
 ##### 使用例
 
 ``` bash
@@ -329,6 +356,33 @@ scene2.rpy    55    "sample5"    Untranslated
 なお、このオプションを使用しなければ自動で全てのファイルが読み込まれて全て翻訳されます。  
 デフォルト値：```[]```  
 設定：```TARGET```
+
+```--start_line```(```-sl```)
+
+翻訳を開始する行数を指定することができます。  
+ヘッダー行は含まず、データの中身の行数だけで認識するので気をつけてください。  
+
+例：```python main.py tsv_translate_menu -sl 3```
+
+翻訳前ファイル(タブはスペース4つで表記)
+
+``` tsv
+filename    linenumber    choice    translated
+scene1.rpy    17    "sample1"    Untranslated
+scene1.rpy    23    "sample2"    Untranslated
+scene1.rpy    26    "sample3"    Untranslated
+scene2.rpy    30    "sample4"    Untranslated
+scene2.rpy    55    "sample5"    Untranslated
+```
+
+翻訳後ファイル
+
+``` tsv
+filename    linenumber    choice    translated
+scene1.rpy    26    "sample3"    サンプル3
+scene2.rpy    30    "sample4"    サンプル4
+scene2.rpy    55    "sample5"    サンプル5
+```
 
 ##### 使用例
 

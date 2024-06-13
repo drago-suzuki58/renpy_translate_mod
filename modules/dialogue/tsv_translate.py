@@ -6,7 +6,7 @@ import requests
 import modules.run_logs as logs
 import modules.base16 as base16
 
-def main(input: str, output: str, fromlang: str, tolang: str, target: List[str]):
+def main(input: str, output: str, fromlang: str, tolang: str, target: List[str], start_line: int):
     logs.logs("DEBUG", "Translate_dialogue", f"{input}, {output}, {fromlang}, {tolang}, {target}")
 
     progress = 1
@@ -32,6 +32,11 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str])
                 filename, linenumber, identifier, contents = line.strip().split('\t')
 
                 if target and filename not in target:
+                    continue
+
+                if progress < start_line:
+                    logs.logs("DEBUG", "Translate_dialogue", f"Skip:\t{filename}, {linenumber}, {identifier}, {contents}")
+                    progress += 1
                     continue
 
                 match_str = re.match(r'^([^"]*)"((?:[^"\\]|\\.)*)"', contents) # エスケープされていないダブルクォーテーションのみを対象にする(つまりセリフと人物を分ける)
