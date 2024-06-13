@@ -28,6 +28,8 @@ def commands():
     tsv2rpy_parser.add_argument('--output', '-o', default=settings.TSV2RPY_OUTPUT, help='The output RenPy script')
     tsv2rpy_parser.add_argument('--tl_lang', '-tl', default=settings.TL_LANG, help='The target language to translate to')
     tsv2rpy_parser.add_argument('--comment', '-c', default=settings.COMMENT, action='store_true', help='Add comments to the RenPy script')
+    tsv2rpy_parser.add_argument('--split_file', '-sf', default=settings.SPLIT_FILE, action='store_true', help='Split the output file into multiple files')
+    tsv2rpy_parser.add_argument('--split_prefix', '-sp', default=settings.SPLIT_PREFIX, help='The prefix for the split files')
 
     # modules.menu.extract
     extract_menu_parser = subparsers.add_parser('extract_menu', help='Extract menu options from a RenPy script')
@@ -49,6 +51,8 @@ def commands():
     tsv2rpy_menu_parser.add_argument('--output', '-o', default=settings.MENU_TSV2RPY_OUTPUT, help='The output RenPy script')
     tsv2rpy_menu_parser.add_argument('--tl_lang', '-tl', default=settings.TL_LANG, help='The target language to translate to')
     tsv2rpy_menu_parser.add_argument('--comment', '-c', default=settings.COMMENT, action='store_true', help='Add comments to the RenPy script')
+    tsv2rpy_menu_parser.add_argument('--split_file', '-sf', default=settings.SPLIT_FILE, action='store_true', help='Split the output file into multiple files')
+    tsv2rpy_menu_parser.add_argument('--split_prefix', '-sp', default=settings.MENU_SPLIT_PREFIX, help='The prefix for the split files')
 
     args = parser.parse_args()
     handle_command(args)
@@ -69,7 +73,7 @@ def handle_command(args):
         modules.dialogue.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target, args.start_line)
     elif args.mode == 'tsv2rpy':
         import modules.dialogue.tsv2rpy
-        modules.dialogue.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)
+        modules.dialogue.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment, args.split_file, args.split_prefix)
     elif args.mode == 'extract_menu':
         import modules.menu.extract
         modules.menu.extract.main(args.input, args.output)
@@ -78,6 +82,6 @@ def handle_command(args):
         modules.menu.tsv_translate.main(args.input, args.output, args.fromlang, args.tolang, args.target, args.start_line)
     elif args.mode == 'tsv2rpy_menu':
         import modules.menu.tsv2rpy
-        modules.menu.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment)
+        modules.menu.tsv2rpy.main(args.input, args.output, args.tl_lang, args.comment, args.split_file, args.split_prefix)
     else:
         logs.logs("ERROR", "Mode", "Invalid mode")

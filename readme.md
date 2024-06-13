@@ -254,6 +254,20 @@ translate japanese scene1_sample3:
 デフォルト値：```False```  
 設定：```COMMENT```
 
+```--split_file```(```-sf```)
+
+TSV一番左の```filename```に応じて、出力するファイルを変更することができるようになり、分割したファイルの生成ができるようになります。
+
+デフォルト値：```False```  
+設定：```SPLIT_FILE```
+
+```--split_prefix```(```-sp```)
+
+分割するファイルにつける接頭詞を変更できます。
+
+デフォルト値：```'convert_'```  
+設定：```SPLIT_PREFIX```
+
 ##### 使用例
 
 ``` bash
@@ -478,6 +492,20 @@ translate japanese strings:
 
 デフォルト値：```False```  
 設定：```COMMENT```
+
+```--split_file```(```-sf```)
+
+TSV一番左の```filename```に応じて、出力するファイルを変更することができるようになり、分割したファイルの生成ができるようになります。
+
+デフォルト値：```False```  
+設定：```SPLIT_FILE```
+
+```--split_prefix```(```-sp```)
+
+分割するファイルにつける接頭詞を変更できます。
+
+デフォルト値：```'menu_convert_'```  
+設定：```MENU_SPLIT_PREFIX```
 
 ##### 使用例
 

@@ -10,6 +10,7 @@ TSV_TRANSLATE_OUTPUT = 'translated.tsv'
 # TSV2RPY
 TSV2RPY_INPUT = 'translated.tsv'
 TSV2RPY_OUTPUT = 'converted.rpy'
+SPLIT_PREFIX = 'convert_'
 
 # Extract Menu
 EXTRACT_MENU_INPUT = []
@@ -22,6 +23,7 @@ MENU_TSV_TRANSLATE_OUTPUT = 'menu_translated.tsv'
 # TSV2RPY Menu version
 MENU_TSV2RPY_INPUT = 'menu_translated.tsv'
 MENU_TSV2RPY_OUTPUT = 'menu_converted.rpy'
+MENU_SPLIT_PREFIX = 'menu_convert_'
 
 # Translation common settings
 FROM_LANG = 'en'
@@ -31,5 +33,6 @@ START_LINE = 0
 # TSV2RPY common settings
 TARGET = []
 TL_LANG = 'japanese'
+SPLIT_FILE = False
 
 COMMENT = False
