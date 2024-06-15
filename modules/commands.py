@@ -19,7 +19,7 @@ def commands():
     tsv_translate_parser.add_argument('--output', '-o', default=settings.TSV_TRANSLATE_OUTPUT, help='The output TSV file')
     tsv_translate_parser.add_argument('--fromlang', '-fr', default=settings.FROM_LANG, help='The language to translate from')
     tsv_translate_parser.add_argument('--tolang', '-to', default=settings.TO_LANG, help='The language to translate to')
-    tsv_translate_parser.add_argument('--target', '-t', nargs='+', default=settings.TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
+    tsv_translate_parser.add_argument('--target', '-t', nargs='+', default=settings.L_TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
     tsv_translate_parser.add_argument('--start_line', '-sl', type=int, default=settings.START_LINE, help='The line to start translating from')
 
     # modules.dialogue.tsv2rpy
@@ -33,7 +33,7 @@ def commands():
 
     # modules.menu.extract
     extract_menu_parser = subparsers.add_parser('extract_menu', help='Extract menu options from a RenPy script')
-    extract_menu_parser.add_argument('--input', '-i', nargs='+', default=settings.EXTRACT_MENU_INPUT, help='The RenPy script to extract menu options from')
+    extract_menu_parser.add_argument('--input', '-i', nargs='+', default=settings.L_EXTRACT_MENU_INPUT, help='The RenPy script to extract menu options from')
     extract_menu_parser.add_argument('--output', '-o', default=settings.EXTRACT_MENU_OUTPUT, help='The output TSV file')
 
     # modules.menu.tsv_translate
@@ -42,7 +42,7 @@ def commands():
     tsv_translate_menu_parser.add_argument('--output', '-o', default=settings.MENU_TSV_TRANSLATE_OUTPUT, help='The output TSV file')
     tsv_translate_menu_parser.add_argument('--fromlang', '-fr', default=settings.FROM_LANG, help='The language to translate from')
     tsv_translate_menu_parser.add_argument('--tolang', '-to', default=settings.TO_LANG, help='The language to translate to')
-    tsv_translate_menu_parser.add_argument('--target', '-t', nargs='+', default=settings.TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
+    tsv_translate_menu_parser.add_argument('--target', '-t', nargs='+', default=settings.L_TARGET, help='The target files to translate(If the list is empty, all files will be targeted)')
     tsv_translate_menu_parser.add_argument('--start_line', '-sl', type=int, default=settings.START_LINE, help='The line to start translating from')
 
     # modules.menu.tsv2rpy

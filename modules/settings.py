@@ -1,38 +1,11 @@
-# Log
-LOG_ENABLED = False
-LOG_FILE = 'log.txt'
-LOG_LEVEL = 'INFO'
+import configparser
 
-# TSV Translate
-TSV_TRANSLATE_INPUT = 'untranslated.tsv'
-TSV_TRANSLATE_OUTPUT = 'translated.tsv'
+def load_settings_from_ini():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
 
-# TSV2RPY
-TSV2RPY_INPUT = 'translated.tsv'
-TSV2RPY_OUTPUT = 'converted.rpy'
-SPLIT_PREFIX = 'convert_'
-
-# Extract Menu
-EXTRACT_MENU_INPUT = []
-EXTRACT_MENU_OUTPUT = 'menu_untranslated.tsv'
-
-# TSV Translate Menu version
-MENU_TSV_TRANSLATE_INPUT = 'menu_untranslated.tsv'
-MENU_TSV_TRANSLATE_OUTPUT = 'menu_translated.tsv'
-
-# TSV2RPY Menu version
-MENU_TSV2RPY_INPUT = 'menu_translated.tsv'
-MENU_TSV2RPY_OUTPUT = 'menu_converted.rpy'
-MENU_SPLIT_PREFIX = 'menu_convert_'
-
-# Translation common settings
-FROM_LANG = 'en'
-TO_LANG = 'ja'
-START_LINE = 0
-
-# TSV2RPY common settings
-TARGET = []
-TL_LANG = 'japanese'
-SPLIT_FILE = False
-
-COMMENT = False
+    for section in config.sections():
+        for key, value in config.items(section):
+            if key.startswith('l_'):
+                value = [item.strip() for item in value.split(',')]
+            globals()[key.upper()] = value
