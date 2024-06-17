@@ -2,7 +2,9 @@
 
 ## 事前準備
 
-Pythonをインストールし、```pip install -r requirements.txt```とコマンドを打ってください。
+リポジトリをクローンまたはzipでダウンロードして、Pythonをインストールし、```pip install -r requirements.txt```とコマンドを打ってください。
+
+または、Releaseから最新のzipファイルをダウンロードしてから解凍をしてください。
 
 ## 注意点
 
@@ -23,6 +25,19 @@ python main.py {mode}
 ```
 
 モードについては後にある解説を参照してください。
+
+もし、Releaseからダウンロードして解凍した場合は、今後の説明をすべて
+
+``` bash
+main.exe {mode}
+```
+
+のように置き換えてください。  
+また、下記のようなエラーが出た場合は、エラーの通り```.\main.exe```と変更すれば動作します。
+
+``` log
+Suggestion [3,General]: The command main.exe was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\main.exe". See "get-help about_Command_Precedence" for more details.
+```
 
 #### ヘルプ
 
@@ -211,7 +226,7 @@ translate {tl_lang} {identifier}:
 
 ```--tl_lang```(```-tl```)
 
-出力ファイルに記載する、RenPyが認識できるゲーム固有の言語名を変更できます。  
+変更できます。  
 大抵の場合、デフォルトでも動くと思いますが、一部のゲームでは異なる場合があるので適宜変更してください。  
 デフォルト値：```'japanese'```  
 設定：```TL_LANG```
