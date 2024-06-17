@@ -32,11 +32,16 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
 
                 filename, linenumber, identifier, contents = line.strip().split('\t')
 
-                if target and filename not in target:
+                if target == [""]:
+                    logs.logs("DEBUG", "Translate_dialogue", f"Pass:\t{filename}, {linenumber}, {identifier}, {contents}")
+                    pass
+                elif filename not in target:
+                    logs.logs("DEBUG", "Translate_dialogue", f"Skip_1:\t{filename}, {linenumber}, {identifier}, {contents}")
+                    progress += 1
                     continue
 
                 if progress < start_line:
-                    logs.logs("DEBUG", "Translate_dialogue", f"Skip:\t{filename}, {linenumber}, {identifier}, {contents}")
+                    logs.logs("DEBUG", "Translate_dialogue", f"Skip_2:\t{filename}, {linenumber}, {identifier}, {contents}")
                     progress += 1
                     continue
 
