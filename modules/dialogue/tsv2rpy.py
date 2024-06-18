@@ -12,6 +12,9 @@ def main(input: str, output: str, tl_lang: str, comment: bool, split_file: bool,
         for line in lines:
             if line == u"filename\tlinenumber\tidentifier\tcontents\n": # ヘッダー行をスキップ
                 continue
+            elif line == u"filename\tlinenumber\tchoice\ttranslated\n":
+                logs.logs("ERROR", "TSV2RPY_dialogue", "This is not a dialogue TSV file.")
+                return
             filename, linenumber, identifier, contents = line.strip().split('\t')
 
             if filename not in output_lines:
