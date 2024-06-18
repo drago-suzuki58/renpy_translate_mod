@@ -7,8 +7,8 @@ def main(input: str, output: str, tl_lang: str, comment: bool, split_file: bool,
 
     output_lines = {}
 
-    with open(input, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    with open(input, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
         for line in lines:
             if line == u"filename\tlinenumber\tidentifier\tcontents\n": # ヘッダー行をスキップ
                 continue
@@ -33,7 +33,6 @@ def main(input: str, output: str, tl_lang: str, comment: bool, split_file: bool,
                 logs.logs("INFO", "TSV2RPY_menu", f"Write {len(lines)} lines to {split_prefix}_{filename}")
     else:
         with open(output, 'w', encoding='utf-8') as f:
-            f.write(f"translate {tl_lang} strings:\n\n")
             for filename, lines in output_lines.items():
                 f.writelines(lines)
                 logs.logs("INFO", "TSV2RPY_menu", f"Write {len(lines)} lines to {output}")
