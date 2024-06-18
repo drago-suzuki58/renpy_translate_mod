@@ -154,9 +154,11 @@ cython_debug/
 log.txt
 _test.py
 
-translated.tsv
-untranslated.tsv
-menu_translated.tsv
-menu_untranslated.tsv
-converted.rpy
-menu_converted.rpy
+/test/file
+
+/translated.tsv
+/untranslated.tsv
+/menu_translated.tsv
+/menu_untranslated.tsv
+/converted.rpy
+/menu_converted.rpy

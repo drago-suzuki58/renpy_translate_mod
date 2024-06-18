@@ -1,0 +1,19 @@
+filename	linenumber	identifier	contents
+test1.rpy	1	test1_0000001	A "Hello,{p=3.0} world"
+test1.rpy	2	test1_0000002	B "Hello,{w=3.0} world [player_name]"
+test1.rpy	3	test1_0000003	C "{b}Hello{/b}, {i}world{/i} {u}[player_age]{/u}"
+test1.rpy	4	test1_0000004	D "\"Hello\" \"world\" [[player_name]"
+test1.rpy	5	test1_0000005	E ""
+test1.rpy	7	test1_0000006	nvl clear
+test2.rpy	8	test2_0000001	A "Hello,{p=3.0} world"
+test2.rpy	9	test2_0000002	B "Hello,{w=3.0} world [player_name]"
+test2.rpy	10	test2_0000003	C "{b}Hello{/b}, {i}world{/i} {u}[player_age]{/u}"
+test2.rpy	11	test2_0000004	D "\"Hello\" \"world\" [[player_name]"
+test2.rpy	12	test2_0000005	E ""
+test2.rpy	14	test2_0000006	nvl clear
+test3.rpy	15	test3_0000001	A "Hello,{p=3.0} world"
+test3.rpy	16	test3_0000002	B "Hello,{w=3.0} world [player_name]"
+test3.rpy	17	test3_0000003	C "{b}Hello{/b}, {i}world{/i} {u}[player_age]{/u}"
+test3.rpy	18	test3_0000004	D "\"Hello\" \"world\" [[player_name]"
+test3.rpy	19	test3_0000005	E ""
+test3.rpy	21	test3_0000006	nvl clear

@@ -1,0 +1,11 @@
+filename	linenumber	identifier	contents
+test2.rpy	10	test2_0000003	C "{b}こんにちは{/b}、{i}世界{/i} {u}[player_age]{/u}"
+test2.rpy	11	test2_0000004	D "\"こんにちは\" \"世界\" [[player_name]"
+test2.rpy	12	test2_0000005	E ""
+test2.rpy	14	test2_0000006	nvl clear
+test3.rpy	15	test3_0000001	A "こんにちは、{p=3.0}世界"
+test3.rpy	16	test3_0000002	B "こんにちは、{w=3.0}世界 [player_name]"
+test3.rpy	17	test3_0000003	C "{b}こんにちは{/b}、{i}世界{/i} {u}[player_age]{/u}"
+test3.rpy	18	test3_0000004	D "\"こんにちは\" \"世界\" [[player_name]"
+test3.rpy	19	test3_0000005	E ""
+test3.rpy	21	test3_0000006	nvl clear

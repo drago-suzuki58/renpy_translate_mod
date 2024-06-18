@@ -1,0 +1,41 @@
+filename	linenumber	choice	translated
+test/input_sample/menu_1.rpy	4	menu A	Untranslated
+test/input_sample/menu_1.rpy	8	menu A-1	Untranslated
+test/input_sample/menu_1.rpy	10	menu A-2	Untranslated
+test/input_sample/menu_1.rpy	12	menu A-3	Untranslated
+test/input_sample/menu_1.rpy	12	menu B-1	Untranslated
+test/input_sample/menu_1.rpy	14	menu B-2	Untranslated
+test/input_sample/menu_1.rpy	16	menu B-3	Untranslated
+test/input_sample/menu_1.rpy	19	menu C-1	Untranslated
+test/input_sample/menu_1.rpy	21	menu C-2	Untranslated
+test/input_sample/menu_1.rpy	23	menu C-3	Untranslated
+test/input_sample/menu_1.rpy	24	menu indent 1	Untranslated
+test/input_sample/menu_1.rpy	27	menu indent 2	Untranslated
+test/input_sample/menu_1.rpy	30	menu indent 3	Untranslated
+test/input_sample/menu_1.rpy	33	menu indent 4	Untranslated
+test/input_sample/menu_1.rpy	36	menu indent 5	Untranslated
+test/input_sample/menu_1.rpy	39	menu indent 6	Untranslated
+test/input_sample/menu_1.rpy	42	menu indent 7	Untranslated
+test/input_sample/menu_1.rpy	45	menu indent 8	Untranslated
+test/input_sample/menu_1.rpy	48	menu indent 9	Untranslated
+test/input_sample/menu_1.rpy	51	menu indent 10	Untranslated
+test/input_sample/menu_2.rpy	4	menu A	Untranslated
+test/input_sample/menu_2.rpy	8	menu A-1	Untranslated
+test/input_sample/menu_2.rpy	10	menu A-2	Untranslated
+test/input_sample/menu_2.rpy	12	menu A-3	Untranslated
+test/input_sample/menu_2.rpy	12	menu B-1	Untranslated
+test/input_sample/menu_2.rpy	14	menu B-2	Untranslated
+test/input_sample/menu_2.rpy	16	menu B-3	Untranslated
+test/input_sample/menu_2.rpy	19	menu C-1	Untranslated
+test/input_sample/menu_2.rpy	21	menu C-2	Untranslated
+test/input_sample/menu_2.rpy	23	menu C-3	Untranslated
+test/input_sample/menu_2.rpy	24	menu indent 1	Untranslated
+test/input_sample/menu_2.rpy	27	menu indent 2	Untranslated
+test/input_sample/menu_2.rpy	30	menu indent 3	Untranslated
+test/input_sample/menu_2.rpy	33	menu indent 4	Untranslated
+test/input_sample/menu_2.rpy	36	menu indent 5	Untranslated
+test/input_sample/menu_2.rpy	39	menu indent 6	Untranslated
+test/input_sample/menu_2.rpy	42	menu indent 7	Untranslated
+test/input_sample/menu_2.rpy	45	menu indent 8	Untranslated
+test/input_sample/menu_2.rpy	48	menu indent 9	Untranslated
+test/input_sample/menu_2.rpy	51	menu indent 10	Untranslated

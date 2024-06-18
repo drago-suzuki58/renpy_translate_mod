@@ -1,0 +1,5 @@
+filename	linenumber	choice	translated
+test1.rpy	76	Go to the park with [player_name]	[player_name] と一緒に公園に行きます。
+test1.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}家にいてください{/color}
+test1.rpy	84	{i}Visit a friend{/i}	{i}友人を訪ねる{/i}
+test1.rpy	86	Read a book about {b}[player_name]{/b}	{b}[player_name]{/b} に関する本を読む

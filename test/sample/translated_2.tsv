@@ -1,0 +1,7 @@
+filename	linenumber	identifier	contents
+test1.rpy	1	test1_0000001	A "こんにちは、{p=3.0}世界"
+test1.rpy	2	test1_0000002	B "こんにちは、{w=3.0}世界 [player_name]"
+test1.rpy	3	test1_0000003	C "{b}こんにちは{/b}、{i}世界{/i} {u}[player_age]{/u}"
+test1.rpy	4	test1_0000004	D "\"こんにちは\" \"世界\" [[player_name]"
+test1.rpy	5	test1_0000005	E ""
+test1.rpy	7	test1_0000006	nvl clear

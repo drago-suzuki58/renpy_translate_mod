@@ -1,0 +1,13 @@
+filename	linenumber	choice	translated
+test1.rpy	76	Go to the park with [player_name]	和 [player_name] 一起去公园
+test1.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}呆在家里{/color}
+test1.rpy	84	{i}Visit a friend{/i}	{i}拜访朋友{/i}
+test1.rpy	86	Read a book about {b}[player_name]{/b}	读一本关于 {b}[player_name]{/b} 的书
+test2.rpy	76	Go to the park with [player_name]	和 [player_name] 一起去公园
+test2.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}呆在家里{/color}
+test2.rpy	84	{i}Visit a friend{/i}	{i}拜访朋友{/i}
+test2.rpy	86	Read a book about {b}[player_name]{/b}	读一本关于 {b}[player_name]{/b} 的书
+test3.rpy	76	Go to the park with [player_name]	和 [player_name] 一起去公园
+test3.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}呆在家里{/color}
+test3.rpy	84	{i}Visit a friend{/i}	{i}拜访朋友{/i}
+test3.rpy	86	Read a book about {b}[player_name]{/b}	读一本关于 {b}[player_name]{/b} 的书
