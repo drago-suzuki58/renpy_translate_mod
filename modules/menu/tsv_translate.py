@@ -29,6 +29,9 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
             for line in lines:
                 if line == "filename\tlinenumber\tchoice\ttranslated\n":
                     continue # ヘッダー行をスキップ
+                elif line == "filename\tlinenumber\tidentifier\tcontents\n":
+                    logs.logs("ERROR", "Translate_dialogue", "This is not a menu TSV file.")
+                    return
 
                 filename, linenumber, choice , translated_text= line.strip().split('\t')
 

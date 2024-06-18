@@ -29,6 +29,9 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
             for line in lines:
                 if line == "filename\tlinenumber\tidentifier\tcontents\n":
                     continue # ヘッダー行をスキップ
+                elif line == "filename\tlinenumber\tchoice\ttranslated\n":
+                    logs.logs("ERROR", "Translate_dialogue", "This is not a dialogue TSV file.")
+                    return
 
                 filename, linenumber, identifier, contents = line.strip().split('\t')
 
