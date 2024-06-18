@@ -55,6 +55,12 @@ def main(input: str, output: str, fromlang: str, tolang: str, target: List[str],
 
                     progress += 1
 
+                elif match_str.group(2) == "":
+                    output_f.write(f"{filename}\t{linenumber}\t{identifier}\t{contents}\n")
+                    logs.logs("DEBUG", "Translate_dialogue", f"Skip_3:\t{filename}, {linenumber}, {identifier}, {contents}")
+                    progress += 1
+                    continue
+
                 else:
                     person = match_str.group(1)
                     dialogue = match_str.group(2)
