@@ -8,7 +8,7 @@ def main(input: List[str], output: str):
     logs.logs("DEBUG", "Extract_menu", f"{input}, {output}")
     choices = []
 
-    if not input:
+    if input == [""]:
         for root, dirs, files in os.walk('.'):
             for file in files:
                 if file.endswith('.rpy'):
