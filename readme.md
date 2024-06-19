@@ -419,6 +419,19 @@ scene2.rpy    55    "sample5"    サンプル5
 デフォルト値：```0```  
 設定：```START_LINE```
 
+```--translated_dic```(```-td```)
+
+翻訳済のテキスト辞書を使用して、その翻訳は出力しないようにできます。  
+ファイルがある場合は自動的に該当のメニューをスキップして次へ、ファイルがない場合は自動で無効になります。  
+辞書ファイルは以下の形式で入力することが可能です。
+
+``` tsv
+filename    linenumber    choice    translated
+```
+
+デフォルト値：```'menu_translated_dic.tsv'```
+設定：```TRANSLATED_DIC```
+
 ##### 使用例
 
 ``` bash
