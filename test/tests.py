@@ -108,7 +108,7 @@ class TestModules(unittest.TestCase):
 
 
     def test_menu_tsv_translate_1(self):
-        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_1.tsv", "en", "ja", [""], 0)
+        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_1.tsv", "en", "ja", [""], 0, "")
         with open("test/file/menu_translated_1.tsv", "r", encoding="utf-8") as output_f:
             with open("test/sample/menu_translated_1.tsv", "r", encoding="utf-8") as sample_f:
                 output_lines = output_f.readlines()
@@ -117,7 +117,7 @@ class TestModules(unittest.TestCase):
                     self.assertEqual(output_line, sample_line)
 
     def test_menu_tsv_translate_2(self):
-        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_2.tsv", "en", "ja", ["test1.rpy"], 0)
+        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_2.tsv", "en", "ja", ["test1.rpy"], 0, "")
         with open("test/file/menu_translated_2.tsv", "r", encoding="utf-8") as output_f:
             with open("test/sample/menu_translated_2.tsv", "r", encoding="utf-8") as sample_f:
                 output_lines = output_f.readlines()
@@ -126,7 +126,7 @@ class TestModules(unittest.TestCase):
                     self.assertEqual(output_line, sample_line)
 
     def test_menu_tsv_translate_3(self):
-        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_3.tsv", "en", "ja", [""], 9)
+        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_3.tsv", "en", "ja", [""], 9, "")
         with open("test/file/menu_translated_3.tsv", "r", encoding="utf-8") as output_f:
             with open("test/sample/menu_translated_3.tsv", "r", encoding="utf-8") as sample_f:
                 output_lines = output_f.readlines()
@@ -135,7 +135,7 @@ class TestModules(unittest.TestCase):
                     self.assertEqual(output_line, sample_line)
 
     def test_menu_tsv_translate_4(self):
-        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_4.tsv", "en", "zh-CN", [""], 0)
+        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_4.tsv", "en", "zh-CN", [""], 0, "")
         with open("test/file/menu_translated_4.tsv", "r", encoding="utf-8") as output_f:
             with open("test/sample/menu_translated_4.tsv", "r", encoding="utf-8") as sample_f:
                 output_lines = output_f.readlines()
@@ -144,7 +144,7 @@ class TestModules(unittest.TestCase):
                     self.assertEqual(output_line, sample_line)
 
     def test_menu_tsv_translate_5(self):
-        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_5.tsv", "en", "ja", ["test1,rpy", "test3.rpy"], 0)
+        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_5.tsv", "en", "ja", ["test1,rpy", "test3.rpy"], 0, "")
         with open("test/file/menu_translated_5.tsv", "r", encoding="utf-8") as output_f:
             with open("test/sample/menu_translated_5.tsv", "r", encoding="utf-8") as sample_f:
                 output_lines = output_f.readlines()
@@ -152,6 +152,14 @@ class TestModules(unittest.TestCase):
                 for output_line, sample_line in zip(output_lines, sample_lines):
                     self.assertEqual(output_line, sample_line)
 
+    def test_menu_tsv_translate_6(self):
+        menu_tsv_translate.main("test/input_sample/menu_untranslated.tsv", "test/file/menu_translated_6.tsv", "en", "ja", [""], 0, "test/input_sample/menu_translated_dic.tsv")
+        with open("test/file/menu_translated_6.tsv", "r", encoding="utf-8") as output_f:
+            with open("test/sample/menu_translated_6.tsv", "r", encoding="utf-8") as sample_f:
+                output_lines = output_f.readlines()
+                sample_lines = sample_f.readlines()
+                for output_line, sample_line in zip(output_lines, sample_lines):
+                    self.assertEqual(output_line, sample_line)
 
     def test_dialogue_tsv2rpy_1(self):
         dialogue_tsv2rpy.main("test/input_sample/translated.tsv", "test/file/converted_1.rpy", "japanese", False, False, "")

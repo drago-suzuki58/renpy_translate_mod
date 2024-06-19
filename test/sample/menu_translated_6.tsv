@@ -1,0 +1,7 @@
+filename	linenumber	choice	translated
+test1.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}家にいてください{/color}
+test1.rpy	84	{i}Visit a friend{/i}	{i}友人を訪ねる{/i}
+test2.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}家にいてください{/color}
+test2.rpy	84	{i}Visit a friend{/i}	{i}友人を訪ねる{/i}
+test3.rpy	82	{color=#ff0000}Stay at home{/color}	{color=#ff0000}家にいてください{/color}
+test3.rpy	84	{i}Visit a friend{/i}	{i}友人を訪ねる{/i}

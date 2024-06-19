@@ -1,0 +1,3 @@
+filename	linenumber	choice	translated
+test1.rpy	76	Go to the park with [player_name]	Untranslated
+test1.rpy	86	Read a book about {b}[player_name]{/b}	Untranslated
