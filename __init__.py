@@ -17,7 +17,7 @@ def extract():
         ):
             contents = tobj.block[0].get_code()
 
-        return "{}\t{}\t{}\t{}\n".format(
+        return u"{}\t{}\t{}\t{}\n".format(
             tobj.filename, tobj.linenumber, tobj.identifier, contents
         )  # TSV形式で出力
 
