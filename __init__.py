@@ -5,9 +5,10 @@ EXTRACT_DIALOGUE_TO_LANG = "japanese"
 
 
 def extract():
+    import io
+
     import renpy
     from renpy import ast
-    import io
 
     def get_untranslated_info_line(tobj):
         contents = ""

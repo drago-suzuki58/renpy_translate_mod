@@ -1,4 +1,5 @@
 import datetime
+
 from colorama import Fore, Style, init
 
 import modules.settings as settings

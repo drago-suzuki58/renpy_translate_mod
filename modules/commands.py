@@ -1,7 +1,7 @@
 import argparse
 
-import modules.settings as settings
 import modules.run_logs as logs
+import modules.settings as settings
 
 
 def commands():

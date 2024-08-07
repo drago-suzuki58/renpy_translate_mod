@@ -1,16 +1,16 @@
-import unittest
 import sys
+import unittest
 
 sys.path.insert(0, "../renpy_translate_mod")
 
-import modules.settings as settings
-import modules.run_logs as logs
 import modules.base16 as base16
-import modules.menu.tsv_translate as menu_tsv_translate
-import modules.dialogue.tsv_translate as dialogue_tsv_translate
-import modules.menu.tsv2rpy as menu_tsv2rpy
 import modules.dialogue.tsv2rpy as dialogue_tsv2rpy
+import modules.dialogue.tsv_translate as dialogue_tsv_translate
 import modules.menu.extract as menu_extract
+import modules.menu.tsv2rpy as menu_tsv2rpy
+import modules.menu.tsv_translate as menu_tsv_translate
+import modules.run_logs as logs
+import modules.settings as settings
 
 
 class TestModules(unittest.TestCase):

@@ -1,10 +1,11 @@
-from typing import List
-from googletrans import Translator
 import re
-import requests
+from typing import List
 
-import modules.run_logs as logs
+import requests
+from googletrans import Translator
+
 import modules.base16 as base16
+import modules.run_logs as logs
 
 
 def main(

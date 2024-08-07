@@ -1,6 +1,6 @@
-from typing import List
-import re
 import os
+import re
+from typing import List
 
 import modules.run_logs as logs
 

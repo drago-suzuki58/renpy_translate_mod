@@ -1,6 +1,6 @@
-from modules.commands import commands
-import modules.settings as settings
 import modules.run_logs as logs
+import modules.settings as settings
+from modules.commands import commands
 
 
 def main():
